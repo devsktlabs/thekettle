@@ -17,6 +17,7 @@
 html {
   color-scheme: dark;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,6 +25,24 @@ body {
   color: #f0ece4;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+a,
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgb(191 127 53 / 20%);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent-light);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 /* ─── Marquee ─────────────────────────────────────────────── */
@@ -43,5 +62,24 @@ body {
 .reveal-hidden {
   opacity: 0;
   transform: translateY(2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
 }
 

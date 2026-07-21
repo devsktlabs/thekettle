@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,6 +30,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#090e09",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -39,7 +44,15 @@ export default function RootLayout({
         geistSans.variable
       } ${geistMono.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-accent px-5 py-3 font-semibold text-white transition-transform duration-200 focus:translate-y-0"
+        >
+          Skip to Content
+        </a>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

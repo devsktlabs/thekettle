@@ -1,4 +1,4 @@
-// Pure CSS marquee — no client JS required
+// Pure CSS marquee; no client JS required.
 
 const PHOTOS = [
   {
@@ -46,15 +46,17 @@ export default function PhotoMarquee() {
     <section className="py-10 overflow-hidden bg-bg">
       {/* Track duplicated for seamless loop */}
       <div className="flex gap-3 marquee-track w-max">
-        {doubled.map((photo, i) => (
+        {doubled.map((photo, index) => (
           <div
-            key={i}
-            className="relative w-[300px] md:w-[360px] h-[200px] md:h-[240px] shrink-0 rounded-[1.125rem] overflow-hidden ring-1 ring-white/[0.06]"
+            key={`${photo.id}-${index}`}
+            className="relative w-[300px] md:w-[360px] h-[200px] md:h-[240px] shrink-0 rounded-2xl overflow-hidden ring-1 ring-white/[0.06]"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={photoUrl(photo.id)}
-              alt={photo.alt}
+              alt={index < PHOTOS.length ? photo.alt : ""}
+              width={360}
+              height={240}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center"
               loading="lazy"

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { ArrowDown } from "@phosphor-icons/react";
 
 const HERO_IMAGE =
   "https://static.wixstatic.com/media/1c1de9_74ebe89d0ea74fe18616c3808177edba~mv2.jpg";
@@ -11,11 +12,11 @@ const ease = [0.32, 0.72, 0, 1] as const;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-end overflow-hidden">
+    <section className="relative min-h-[92dvh] flex items-end overflow-hidden">
       {/* Background photo */}
       <Image
         src={HERO_IMAGE}
-        alt="The Brewer's Kettle — interior atmosphere"
+        alt="The warmly lit interior of The Brewer's Kettle"
         fill
         className="object-cover object-center"
         priority
@@ -50,7 +51,7 @@ export default function Hero() {
             className="text-white/70 text-lg md:text-xl leading-relaxed max-w-lg mb-10"
           >
             Cold beer, cocktails, cannabis alt drinks, TVs, and games for the
-            kids - all under one roof.
+            kids, all under one roof.
           </motion.p>
 
           {/* CTAs */}
@@ -62,32 +63,22 @@ export default function Hero() {
           >
             <Link
               href="#vibe"
-              className="flex items-center gap-2 pl-6 pr-2 py-3 rounded-full bg-accent text-white font-semibold text-sm tracking-wide hover:bg-accent-light active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group"
+              className="flex items-center gap-2 pl-6 pr-2 py-3 rounded-full bg-accent text-white font-semibold text-sm tracking-wide hover:bg-accent-light active:scale-[0.98] transition-[background-color,transform] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group"
             >
               See the Vibe
               <span className="w-8 h-8 rounded-full bg-black/20 flex items-center justify-center group-hover:translate-x-[2px] group-hover:-translate-y-[1px] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
-                ↓
+                <ArrowDown aria-hidden="true" weight="bold" size={14} />
               </span>
             </Link>
             <Link
               href="#events"
-              className="flex items-center px-6 py-3 rounded-full ring-1 ring-white/30 text-white font-semibold text-sm tracking-wide hover:ring-white/60 hover:bg-white/[0.05] active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+              className="flex items-center px-6 py-3 rounded-full ring-1 ring-white/30 text-white font-semibold text-sm tracking-wide hover:ring-white/60 hover:bg-white/[0.05] active:scale-[0.98] transition-[background-color,box-shadow,transform] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
             >
               Book an Event
             </Link>
           </motion.div>
         </div>
 
-        {/* Hours strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease, delay: 0.7 }}
-          className="absolute bottom-6 right-6 md:right-12 hidden md:flex items-center gap-1 text-[11px] text-white/40 tracking-[0.1em] font-medium"
-        >
-          <span className="w-1 h-1 rounded-full bg-accent mr-1.5" />
-          NOW OPEN · MON–THU 12:30–10 · FRI–SAT 12–11 · SUN 12–8:30
-        </motion.div>
       </div>
     </section>
   );

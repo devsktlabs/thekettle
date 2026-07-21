@@ -1,4 +1,4 @@
-// Static server component — no client JS needed
+import { ArrowRight, InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 
 const HOURS = [
   { day: "Sun", hours: "12:00 – 8:30" },
@@ -40,9 +40,8 @@ export default function Hours() {
               Find Us
             </h2>
 
-            {/* Address card — double-bezel */}
-            <div className="rounded-[1.5rem] p-[7px] bg-white/[0.04] ring-1 ring-white/[0.07] mb-6">
-              <div className="rounded-[calc(1.5rem-7px)] bg-[#0f1a0f] p-6">
+            <div className="rounded-2xl p-[7px] bg-white/[0.04] ring-1 ring-white/[0.07] mb-6">
+              <div className="rounded-[calc(1rem-7px)] bg-[#0f1a0f] p-6">
                 <p className="text-bone text-lg font-semibold mb-1">
                   The Brewer&apos;s Kettle
                 </p>
@@ -53,7 +52,7 @@ export default function Hours() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-accent text-sm font-semibold tracking-wide hover:text-accent-light transition-colors duration-300"
                 >
-                  Get Directions →
+                  Get Directions <ArrowRight aria-hidden="true" weight="bold" size={14} />
                 </a>
               </div>
             </div>
@@ -65,21 +64,7 @@ export default function Hours() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 text-muted hover:text-bone transition-colors duration-300 text-sm font-medium"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-5 h-5"
-                aria-hidden="true"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-              </svg>
+              <InstagramLogo aria-hidden="true" weight="regular" size={20} />
               @brewerskettleilm
             </a>
           </div>

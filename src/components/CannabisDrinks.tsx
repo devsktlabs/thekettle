@@ -9,7 +9,7 @@ const ease = [0.32, 0.72, 0, 1] as const;
 
 export default function CannabisDrinks() {
   return (
-    <section id="drinks" className="scroll-mt-16 py-24 md:py-32 bg-[#0b140b]">
+    <section id="drinks" className="scroll-mt-16 py-24 md:py-32 bg-surface">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* ── Left: Text ─────────────────────────────────── */}
@@ -20,9 +20,9 @@ export default function CannabisDrinks() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, ease }}
             >
-              <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-[#1e3a1e] ring-1 ring-[#3a6e3a]/50">
-                <Leaf weight="light" size={14} className="text-[#6abf6a]" />
-                <span className="text-[10px] font-semibold tracking-[0.2em] text-[#6abf6a] uppercase">
+              <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-accent/10 ring-1 ring-accent/30">
+                <Leaf weight="light" size={14} className="text-accent" />
+                <span className="text-[10px] font-semibold tracking-[0.2em] text-accent uppercase">
                   Something New
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function CannabisDrinks() {
                 href="https://www.instagram.com/brewerskettleilm"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full bg-accent text-white font-semibold text-sm tracking-wide hover:bg-accent-light active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group"
+                className="inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full bg-accent text-white font-semibold text-sm tracking-wide hover:bg-accent-light active:scale-[0.98] transition-[background-color,transform] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group"
               >
                 Ask us what&apos;s on tap
                 <span className="w-8 h-8 rounded-full bg-black/20 flex items-center justify-center group-hover:translate-x-[2px] group-hover:-translate-y-[1px] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
@@ -88,18 +88,17 @@ export default function CannabisDrinks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease, delay: 0.1 }}
-            className="rounded-[1.5rem] p-[7px] bg-white/[0.04] ring-1 ring-[#3a6e3a]/30"
+            className="rounded-2xl p-[7px] bg-white/[0.04] ring-1 ring-accent/20"
           >
-            <div className="rounded-[calc(1.5rem-7px)] overflow-hidden aspect-[4/3] relative">
+            <div className="rounded-[calc(1rem-7px)] overflow-hidden aspect-[4/3] relative">
               <Image
-                src="https://picsum.photos/seed/hemp-cannabis-drink-bar-cans/800/600"
-                alt="Cannabis alternative drinks at The Brewer's Kettle"
+                src="https://static.wixstatic.com/media/1c1de9_52ed1000b83342c1ba23618c240614b3~mv2.webp"
+                alt="Drinks and conversation at The Brewer's Kettle"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width:768px) 100vw, 50vw"
               />
-              {/* Subtle green tint overlay */}
-              <div className="absolute inset-0 bg-[#0d2010]/30" />
+              <div className="absolute inset-0 bg-black/10" />
             </div>
           </motion.div>
         </div>

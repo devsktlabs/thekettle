@@ -45,7 +45,7 @@ export default function Events() {
             transition={{ duration: 0.7, ease, delay: 0.1 }}
             className="text-white/65 text-lg md:text-xl leading-relaxed mb-8 max-w-lg"
           >
-            We make event nights effortless. Great food, full bar, big TVs,
+            We make event nights effortless. Full bar, big TVs,
             and a crowd-ready room.
           </motion.p>
 
@@ -77,7 +77,7 @@ export default function Events() {
               href="https://www.instagram.com/brewerskettleilm"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 pl-7 pr-2 py-3.5 rounded-full bg-accent text-white font-semibold text-base tracking-wide hover:bg-accent-light active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group"
+              className="inline-flex items-center gap-2 pl-7 pr-2 py-3.5 rounded-full bg-accent text-white font-semibold text-base tracking-wide hover:bg-accent-light active:scale-[0.98] transition-[background-color,transform] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group"
             >
               Book an Event
               <span className="w-9 h-9 rounded-full bg-black/20 flex items-center justify-center group-hover:translate-x-[2px] group-hover:-translate-y-[1px] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">

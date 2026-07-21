@@ -26,10 +26,10 @@ function BentoCell({ children, className = "", delay = 0 }: CellProps) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease, delay }}
       whileHover={{ y: -3, transition: { duration: 0.3, ease } }}
-      className={`rounded-[1.5rem] p-[7px] bg-white/[0.04] ring-1 ring-white/[0.07] ${className}`}
+      className={`rounded-2xl p-[7px] bg-white/[0.04] ring-1 ring-white/[0.07] ${className}`}
     >
-      {/* Inner core — double-bezel */}
-      <div className="rounded-[calc(1.5rem-7px)] h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+      {/* Inner core with a double bezel. */}
+      <div className="rounded-[calc(1rem-7px)] h-full overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
         {children}
       </div>
     </motion.div>
@@ -55,7 +55,7 @@ export default function VibeGrid() {
           </h2>
         </motion.div>
 
-        {/* Bento grid — 4 cols desktop, 1 col mobile */}
+        {/* Bento grid: 4 columns on desktop, 1 on mobile. */}
         <div
           className="grid grid-cols-1 md:grid-cols-4 gap-3"
           style={{ gridAutoRows: "225px" }}
@@ -86,8 +86,8 @@ export default function VibeGrid() {
                   Make the group chat easy.
                 </h3>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Birthdays, watch parties, team nights - we&apos;ve got the space,
-                  screens, and bar.
+                  Birthdays, watch parties, and team nights. We&apos;ve got the
+                  space, screens, and bar.
                 </p>
               </div>
             </div>
@@ -116,8 +116,8 @@ export default function VibeGrid() {
           <BentoCell delay={0.15}>
             <div className="relative h-full min-h-[225px] overflow-hidden">
               <Image
-                src="https://picsum.photos/seed/bar-games-pool-table/400/450"
-                alt="Games area"
+                src="https://static.wixstatic.com/media/1c1de9_58b8b7dff4f445829e428f8986b4e32e~mv2.jpg"
+                alt="Games area at The Brewer's Kettle"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width:768px) 100vw, 25vw"
@@ -156,7 +156,7 @@ export default function VibeGrid() {
                   Full Bar
                 </h3>
                 <p className="text-muted text-sm leading-snug">
-                  Spirits, wine, cocktails — the full lineup, done right.
+                  Spirits, wine, and cocktails. The full lineup, done right.
                 </p>
               </div>
             </div>
@@ -164,17 +164,17 @@ export default function VibeGrid() {
 
           {/* ── Cell 5: Cannabis Alt Drinks (highlighted) ────── */}
           <BentoCell delay={0.25}>
-            <div className="relative h-full min-h-[225px] bg-[#0d1f0e] flex flex-col justify-between p-6 ring-1 ring-[#3a6e3a]/40 rounded-[calc(1.5rem-7px)]">
+            <div className="relative h-full min-h-[225px] bg-surface-2 flex flex-col justify-between p-6 ring-1 ring-accent/30 rounded-[calc(1rem-7px)]">
               <Leaf
                 weight="light"
                 size={32}
-                className="text-[#5db85d] opacity-90"
+                className="text-accent opacity-90"
               />
               <div>
                 <h3 className="font-display font-bold text-bone text-xl tracking-tight mb-1">
                   Cannabis Alt Drinks
                 </h3>
-                <p className="text-[#8ab88a] text-sm leading-snug">
+                <p className="text-muted text-sm leading-snug">
                   Hemp-derived, zero alcohol, and finally on the menu.
                 </p>
               </div>
