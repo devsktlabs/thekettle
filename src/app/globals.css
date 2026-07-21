@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg:           #090e09;
+  --color-surface:      #111711;
+  --color-surface-2:    #1a241a;
+  --color-accent:       #bf7f35;
+  --color-accent-light: #d4943f;
+  --color-bone:         #f0ece4;
+  --color-muted:        #7a8a72;
+
+  --font-display: var(--font-outfit);
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #090e09;
+  color: #f0ece4;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Marquee ─────────────────────────────────────────────── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-scroll 55s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Scroll reveal base ──────────────────────────────────── */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
